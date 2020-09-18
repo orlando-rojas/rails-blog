@@ -1,0 +1,14 @@
+<div class="small-container center-block">
+  <h1 class="font-weight-bold text-uppercase margin-top">Edit User</h1>
+  <% if current_user.avatar.attached? %>
+    <%= image_tag url_for(current_user.avatar), height:50 %>
+  <% end %>
+  <%= form_with(model: current_user, local: true) do |form|%>
+    <div class="field">
+      <%= form.label :avatar %>
+      <%= form.file_field :avatar %>
+    </div>
+
+    <%= form.submit "Save", class:'btn btn-primary' %>
+  <% end %>
+</div>

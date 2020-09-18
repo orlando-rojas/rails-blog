@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'home#index'
 
+  get 'profile', to: 'users#edit'
+  resources :users, only: %i[update]
   get 'articles/my_articles', to: 'articles#my_articles', as: :my_articles
   resources :articles do
     get 'user/:id', to: 'articles#from_author', on: :collection
