@@ -13,8 +13,8 @@
   </div>
   
   <% if current_user == @article.user %>
-    <p><%= link_to 'Delete article', @article, method: :delete %> </p>
-    <p><%= link_to 'Edit article', edit_article_path%> </p>
+    <%= link_to 'Delete article', @article, method: :delete, class: 'btn btn-danger'%>
+    <%= link_to 'Edit article', edit_article_path, class: 'btn btn-success'%>
   <% end %>
   
   

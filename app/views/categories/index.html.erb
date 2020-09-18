@@ -15,8 +15,8 @@
         <tr>
           <td><h2><%= link_to category.title, category, class: 'text-info'%></h2></td>
           <td class="padding"><div style="background-color:<%= category.color %>;height:5px; width: 20px;"></div></td>
-          <td class="padding"><%= link_to 'Edit', edit_category_path(category) %></td>
-          <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td class="padding"><%= link_to 'Edit', edit_category_path(category), class: 'btn btn-success' %></td>
+          <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
         </tr>
       <% end %>
     </tbody>
