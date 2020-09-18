@@ -6,12 +6,22 @@
     </div>
 
     <div class="field">
+      <%=form.label :category_elements %>
+      <div class="row">
+        <% @categories.each do |category| %>
+          <label class="col-6 col-sm-4">
+            <%= form.check_box :category_elements, {multiple: true}, category.id, nil%>
+            <%= category.title %>
+          </label>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="field">
       <%=form.label :content %>
       <%=form.rich_text_area :content %>
     </div>
 
-    <div>
-      <%= form.submit :class => 'btn btn-primary margin-top' %>
-    </div>
+    <%= form.submit :class => 'btn btn-primary margin-top' %>
   </div>
 <% end %>

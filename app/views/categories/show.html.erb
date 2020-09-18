@@ -1,0 +1,13 @@
+<div class="large-container center-block margin-top">
+  <h2>Articles posted in: 
+    <span class="badge badge-pill padding text-white" style="background-color: <%=@category.color%>">
+      <%= @category.title %>
+    </span>
+  </h2>
+  <%= render @category.articles %>
+  <div class="padding">
+    <%= link_to 'Edit', edit_category_path(@category) %> |
+    <%= link_to 'Back', categories_path %>
+  </div>
+</div>
+

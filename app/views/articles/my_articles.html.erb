@@ -1,4 +1,5 @@
 <div class="large-container center-block margin-top">
-  <h2>Articles posted by: <%= @user.email %></h2>
+  <h2>My articles: </h2>
+  <h2><%= @user.email %></h2>
   <%= render @user.articles %>
 </div>

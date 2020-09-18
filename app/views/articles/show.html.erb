@@ -1,5 +1,21 @@
 <div class="large-container center-block">
   <h1><%= @article.title %></h1>
+  <h2>Written by: <strong><%= @article.user.email %></strong></h2>
   <p><%= @article.content %></p>
-  <p><%= link_to 'Eliminar el artículo', @article, method: :delete %> </p>
+
+  <div class="margin">
+    <p class="label">Tags</p>
+    <% @article.categories.each do |category| %>
+      <span class="badge badge-pill padding" style="background-color: <%=category.color%>">
+        <%= link_to category.title, category, class:"text-white" %>
+      </span>
+    <% end %>
+  </div>
+  
+  <% if current_user == @article.user %>
+    <p><%= link_to 'Delete article', @article, method: :delete %> </p>
+    <p><%= link_to 'Edit article', edit_article_path%> </p>
+  <% end %>
+  
+  
 </div>
