@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <% if notice %>
+      <p class="notice padding alert-primary"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert padding alert-danger"><%= alert %></p>
+    <% end %>
+    <%= render 'partials/nav'%>
     <%= yield %>
   </body>
 </html>

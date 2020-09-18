@@ -1,1 +1,51 @@
 @import "~bootstrap/scss/bootstrap";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.small-container {
+  width: 100%;
+  max-width: 680px;
+}
+.large-container {
+  width: 100%;
+  max-width: 960px;
+}
+.center-block {
+  margin: 0 auto;
+}
+.padding {
+  padding: 10px 15px;
+}
+
+.margin {
+  margin: 10px 0;
+}
+
+.margin-top {
+  margin-top: 1.5em;
+}
+
+.field {
+  @extend .margin-top;
+  label {
+    @extend .text-uppercase;
+    @extend .text-secondary;
+  }
+  &:first-of-type {
+    margin-top: 0;
+  }
+  input {
+    @extend .form-control;
+    @extend .bg-light;
+  }
+  input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 0.5em;
+  }
+}
